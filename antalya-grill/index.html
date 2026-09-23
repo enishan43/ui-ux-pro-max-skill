@@ -4,10 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Antalya-Grill Hamm</title>
-<meta name="description" content="Antalya-Grill – türkischer Grill in Hamm. Döner, Kebab-Teller und mehr. Rautenstrauchstraße 55, 59075 Hamm. Sitzplätze im Freien.">
+<meta name="description" content="Antalya-Grill in Hamm: Döner, Dürüm, Kebab-Teller, Pide, Lahmacun und Pizza. Speisekarte mit Preisen. Rautenstrauchstraße 55, 59075 Hamm · 02381 73565.">
+<meta name="theme-color" content="#B91C1C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Antalya-Grill",
+  "servesCuisine": "Türkisch",
+  "priceRange": "10–20 €",
+  "telephone": "+49 2381 73565",
+  "address": { "@type": "PostalAddress", "streetAddress": "Rautenstrauchstraße 55", "postalCode": "59075", "addressLocality": "Hamm", "addressCountry": "DE" }
+}
+</script>
 <style>
   :root {
     --primary: #B91C1C;
@@ -16,46 +28,51 @@
     --accent: #A16207;
     --bg: #FFF8F1;
     --surface: #FFFFFF;
+    --surface-2: #FCEFE4;
     --fg: #3B0A0A;
     --muted: #6B4F4F;
     --border: #F1D9C9;
     --band: #3B0A0A;
     --on-band: #FFF8F1;
     --star: #D97706;
+    --veg: #15803D;
     --radius: 14px;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --primary: #EF4444; --primary-hover: #F87171; --on-primary: #1A0505;
-      --accent: #FBBF24; --bg: #140A08; --surface: #1F1310; --fg: #FBEFE6;
-      --muted: #CDB5A8; --border: #3A2520; --band: #2A1510; --on-band: #FBEFE6; --star: #FBBF24;
+      --accent: #FBBF24; --bg: #140A08; --surface: #1F1310; --surface-2: #2A1A15; --fg: #FBEFE6;
+      --muted: #CDB5A8; --border: #3A2520; --band: #2A1510; --on-band: #FBEFE6; --star: #FBBF24; --veg: #4ADE80;
     }
   }
   :root[data-theme="dark"] {
     --primary: #EF4444; --primary-hover: #F87171; --on-primary: #1A0505;
-    --accent: #FBBF24; --bg: #140A08; --surface: #1F1310; --fg: #FBEFE6;
-    --muted: #CDB5A8; --border: #3A2520; --band: #2A1510; --on-band: #FBEFE6; --star: #FBBF24;
+    --accent: #FBBF24; --bg: #140A08; --surface: #1F1310; --surface-2: #2A1A15; --fg: #FBEFE6;
+    --muted: #CDB5A8; --border: #3A2520; --band: #2A1510; --on-band: #FBEFE6; --star: #FBBF24; --veg: #4ADE80;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   body { font-family: 'Karla', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; font-size: 17px; }
   a { color: inherit; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
   h1, h2, h3 { font-family: 'Playfair Display SC', Georgia, serif; line-height: 1.15; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 16px; top: -60px; background: var(--primary); color: var(--on-primary); padding: 10px 16px; border-radius: 8px; z-index: 50; }
+  .skip:focus { top: 12px; }
 
   /* Header */
-  header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+  header { position: sticky; top: 0; z-index: 30; background: var(--bg); border-bottom: 1px solid var(--border); }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
   .logo { font-family: 'Playfair Display SC', serif; font-weight: 700; font-size: 1.35rem; text-decoration: none; color: var(--primary); }
   .nav ul { display: flex; gap: 24px; list-style: none; }
-  .nav ul a { text-decoration: none; font-weight: 500; color: var(--muted); transition: color .2s; }
+  .nav ul a { text-decoration: none; font-weight: 600; color: var(--muted); transition: color .2s; }
   .nav ul a:hover { color: var(--primary); }
-  @media (max-width: 720px) { .nav ul { display: none; } }
+  @media (max-width: 760px) { .nav ul { display: none; } }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color .2s, transform .2s, border-color .2s; border: 2px solid transparent; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color .2s, transform .2s, border-color .2s; border: 2px solid transparent; }
   .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
   .btn-primary { background: var(--primary); color: var(--on-primary); }
   .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
@@ -66,73 +83,127 @@
   /* Hero */
   .hero { padding: 72px 0 64px; }
   .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
+  .eyebrow { font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
   .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); margin: 12px 0 16px; }
   .hero h1 span { color: var(--primary); }
-  .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 34ch; }
+  .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 36ch; }
   .rating { display: flex; align-items: center; gap: 10px; margin: 24px 0 28px; flex-wrap: wrap; }
   .stars { display: flex; gap: 2px; color: var(--star); }
   .stars svg { width: 20px; height: 20px; }
   .rating strong { font-size: 1.1rem; }
-  .rating small { color: var(--muted); }
+  .rating small { color: var(--muted); font-size: .95rem; }
   .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
   .hero-card { background: var(--band); color: var(--on-band); border-radius: 24px; padding: 32px; position: relative; overflow: hidden; }
-  .hero-card::before { content: ""; position: absolute; inset: auto -40px -60px auto; width: 220px; height: 220px; border-radius: 50%; background: var(--primary); opacity: .35; }
+  .hero-card::before { content: ""; position: absolute; right: -40px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; background: var(--primary); opacity: .35; }
   .hero-card h2 { font-size: 1.5rem; margin-bottom: 20px; position: relative; }
   .facts { list-style: none; display: grid; gap: 16px; position: relative; }
   .facts li { display: flex; gap: 12px; align-items: flex-start; }
   .facts svg { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; color: var(--accent); }
   .facts a { text-decoration: underline; text-underline-offset: 3px; }
-  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } .hero { padding: 48px 0; } }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } .hero { padding: 40px 0 48px; } }
+
+  /* Favourites strip */
+  .favs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .fav { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; text-decoration: none; transition: border-color .2s, transform .2s; }
+  .fav:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .fav b { font-family: 'Playfair Display SC', serif; font-size: 1.15rem; display: block; }
+  .fav small { color: var(--muted); }
+  .fav .price { font-size: 1.25rem; }
+  @media (max-width: 760px) { .favs { grid-template-columns: 1fr; margin-top: 32px; } }
 
   /* Sections */
   section { padding: 72px 0; }
-  .section-head { max-width: 640px; margin-bottom: 40px; }
+  .section-head { max-width: 640px; margin-bottom: 32px; }
   .section-head h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); margin-bottom: 8px; }
   .section-head p { color: var(--muted); }
 
-  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-  .dish { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: border-color .2s, transform .2s; }
-  .dish:hover { border-color: var(--primary); transform: translateY(-2px); }
-  .dish .tag { display: inline-block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); margin-bottom: 10px; }
-  .dish h3 { font-size: 1.4rem; margin-bottom: 8px; }
-  .dish p { color: var(--muted); }
-  .menu-note { margin-top: 28px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; color: var(--muted); }
+  /* Menu */
+  #speisekarte { background: var(--surface-2); }
+  .menu-tools { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+  .search { position: relative; flex: 1 1 260px; max-width: 420px; }
+  .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--muted); pointer-events: none; }
+  .search input { width: 100%; min-height: 48px; padding: 0 16px 0 44px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--fg); font: inherit; }
+  .search input:focus { outline: none; border-color: var(--primary); }
+  .toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; font-weight: 600; user-select: none; }
+  .toggle input { width: 18px; height: 18px; accent-color: var(--veg); cursor: pointer; }
+  .toggle:has(input:checked) { border-color: var(--veg); }
 
+  .chipbar { position: sticky; top: 64px; z-index: 20; background: var(--surface-2); padding: 12px 0; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); text-decoration: none; font-weight: 600; font-size: .95rem; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; }
+  .chip:hover { border-color: var(--primary); }
+  .chip.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+
+  .cat { padding-top: 32px; }
+  .cat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
+  .cat-head h3 { font-size: 1.8rem; }
+  .count { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+  .cat-sub { color: var(--muted); margin-top: 8px; }
+  .items { list-style: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; margin-top: 8px; }
+  .item { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px dashed var(--border); }
+  .item[hidden], .cat[hidden] { display: none; }
+  .item h4 { font-size: 1.08rem; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+  .item p { color: var(--muted); font-size: .95rem; margin-top: 2px; }
+  .prices { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; }
+  .price { font-weight: 700; color: var(--primary); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .price small { font-weight: 500; color: var(--muted); font-size: .8rem; margin-right: 2px; }
+  .badge { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; font-family: 'Karla', sans-serif; }
+  .b-veg, .b-vegan { color: var(--veg); }
+  .b-pop { color: var(--accent); }
+  .extras { list-style: none; margin-top: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 20px; }
+  .extras li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; color: var(--muted); font-size: .95rem; }
+  .extras li + li { border-top: 1px dashed var(--border); }
+  .extras b { color: var(--fg); }
+  .empty { display: none; text-align: center; padding: 48px 16px; color: var(--muted); }
+  .empty.show { display: block; }
+  .menu-foot { margin-top: 40px; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--band); color: var(--on-band); border-radius: var(--radius); padding: 24px 28px; }
+  .menu-foot p { font-size: .92rem; opacity: .85; }
+  .menu-foot b { font-size: 1.15rem; display: block; margin-bottom: 4px; opacity: 1; }
+  @media (max-width: 760px) {
+    .items { grid-template-columns: 1fr; }
+    .cat-head h3 { font-size: 1.5rem; }
+    .toggle { flex: 1 1 auto; justify-content: center; }
+    .search { max-width: none; }
+    .chipbar { margin: 0 -16px 8px; padding: 10px 16px; }
+    .chips { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); padding-right: 32px; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { scroll-snap-align: start; }
+    html { scroll-padding-top: 130px; }
+  }
+
+  /* Reviews */
   .band { background: var(--band); color: var(--on-band); }
   .band .section-head p { color: color-mix(in srgb, var(--on-band) 75%, transparent); }
   .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
   blockquote { background: color-mix(in srgb, var(--on-band) 7%, transparent); border: 1px solid color-mix(in srgb, var(--on-band) 15%, transparent); border-radius: var(--radius); padding: 28px; font-size: 1.2rem; }
-  blockquote .stars { margin-bottom: 12px; }
   blockquote cite { display: block; margin-top: 14px; font-style: normal; font-size: .9rem; opacity: .75; }
-  .big-score { display: flex; align-items: baseline; gap: 12px; margin-bottom: 32px; }
+  .big-score { display: flex; align-items: baseline; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
   .big-score b { font-family: 'Playfair Display SC', serif; font-size: 4rem; line-height: 1; color: var(--accent); }
 
+  /* Visit */
   .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
-  .panel h3 { font-size: 1.3rem; margin-bottom: 12px; }
-  .panel p { color: var(--muted); margin-bottom: 16px; }
-  .map { border: 0; width: 100%; height: 100%; min-height: 320px; border-radius: var(--radius); background: var(--border); }
-  .status { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 12px; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
-  .dot.open { background: #16A34A; }
+  .panel h3 { font-size: 1.3rem; margin-bottom: 8px; }
+  .panel p { color: var(--muted); margin-bottom: 20px; }
+  .map { border: 0; width: 100%; height: 100%; min-height: 340px; border-radius: var(--radius); background: var(--border); }
   @media (max-width: 860px) { .visit-grid { grid-template-columns: 1fr; } }
 
   footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: .92rem; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-  /* Mobile sticky call bar */
+  /* Mobile action bar */
   .callbar { display: none; }
-  @media (max-width: 720px) {
-    .callbar { display: flex; gap: 8px; position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--border); z-index: 20; }
-    .callbar .btn { flex: 1; justify-content: center; }
+  @media (max-width: 760px) {
+    .callbar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--border); z-index: 40; }
+    .callbar .btn { padding: 0 8px; font-size: .95rem; }
     body { padding-bottom: 76px; }
     .nav .btn { display: none; }
   }
 </style>
 </head>
 <body>
+<a href="#speisekarte" class="skip">Zur Speisekarte springen</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
@@ -141,106 +212,128 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol>
   <symbol id="i-euro" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 10h12M4 14h9M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol>
-  <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></g></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><polygon fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></g></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h10"/></symbol>
 </svg>
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo">Antalya-Grill</a>
-    <ul>
-      <li><a href="#speisekarte">Speisekarte</a></li>
-      <li><a href="#bewertungen">Bewertungen</a></li>
-      <li><a href="#besuch">Anfahrt</a></li>
-    </ul>
-    <a href="tel:+49238173565" class="btn btn-primary btn-sm"><svg><use href="#i-phone"/></svg>02381 73565</a>
+    <a href="#top" class="logo">Antalya-Grill</a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#bewertungen">Bewertungen</a></li>
+        <li><a href="#besuch">Anfahrt</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+49238173565" class="btn btn-primary btn-sm"><svg aria-hidden="true"><use href="#i-phone"/></svg>02381 73565</a>
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Türkischer Grill · Hamm</span>
-        <h1>Döner, Kebab &amp; <span>volle Teller</span>.</h1>
-        <p class="lead">Frisch vom Grill, großzügige Portionen und faire Preise – direkt an der Rautenstrauchstraße.</p>
-        <div class="rating" aria-label="4,4 von 5 Sternen bei 443 Google-Rezensionen">
-          <div class="stars" aria-hidden="true">
-            <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg style="opacity:.45"><use href="#i-star"/></svg>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Türkischer Grill in Hamm</span>
+          <h1>Döner, Kebab &amp; <span>volle Teller</span>.</h1>
+          <p class="lead">Frisch vom Grill und aus dem Ofen: Döner, Pide, Lahmacun und Pizza. Große Portionen zu fairen Preisen.</p>
+          <div class="rating">
+            <div class="stars" aria-hidden="true">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg style="opacity:.45"><use href="#i-star"/></svg>
+            </div>
+            <strong><span class="sr-only">Bewertung: </span>4,4 von 5</strong><small>443 Google-Rezensionen</small>
           </div>
-          <strong>4,4</strong><small>443 Google-Rezensionen</small>
+          <div class="cta-row">
+            <a href="#speisekarte" class="btn btn-primary"><svg aria-hidden="true"><use href="#i-menu"/></svg>Speisekarte ansehen</a>
+            <a href="tel:+49238173565" class="btn btn-ghost"><svg aria-hidden="true"><use href="#i-phone"/></svg>Jetzt anrufen</a>
+          </div>
         </div>
-        <div class="cta-row">
-          <a href="tel:+49238173565" class="btn btn-primary"><svg><use href="#i-phone"/></svg>Jetzt bestellen</a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Rautenstrauchstra%C3%9Fe+55,+59075+Hamm" class="btn btn-ghost" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Route planen</a>
-        </div>
+        <aside class="hero-card" aria-labelledby="glance">
+          <h2 id="glance">Auf einen Blick</h2>
+          <ul class="facts">
+            <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div>Öffnet um 11:00 Uhr</div></li>
+            <li><svg aria-hidden="true"><use href="#i-pin"/></svg><div>Rautenstrauchstraße 55<br>59075 Hamm</div></li>
+            <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+49238173565">02381 73565</a></li>
+            <li><svg aria-hidden="true"><use href="#i-euro"/></svg><div>10–20 € pro Person</div></li>
+            <li><svg aria-hidden="true"><use href="#i-sun"/></svg><div>Sitzplätze im Freien</div></li>
+          </ul>
+        </aside>
       </div>
-      <aside class="hero-card">
-        <h2>Auf einen Blick</h2>
-        <ul class="facts">
-          <li><svg><use href="#i-clock"/></svg><div>Öffnet um 11:00 Uhr</div></li>
-          <li><svg><use href="#i-pin"/></svg><div>Rautenstrauchstraße 55<br>59075 Hamm</div></li>
-          <li><svg><use href="#i-phone"/></svg><a href="tel:+49238173565">02381 73565</a></li>
-          <li><svg><use href="#i-euro"/></svg><div>10–20 € pro Person</div></li>
-          <li><svg><use href="#i-sun"/></svg><div>Sitzplätze im Freien</div></li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section id="speisekarte">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Beliebt bei unseren Gästen</h2>
-        <p>Die Highlights der Speisekarte – Kalb oder Pute, mit hausgemachter Soße.</p>
-      </div>
-      <div class="menu-grid">
-        <article class="dish">
-          <span class="tag">Highlight</span>
-          <h3>Teller Kebab mit Putenfleisch</h3>
-          <p>Zartes Putenfleisch vom Drehspieß, reichlich Beilagen und Soße – ein Teller, der satt macht.</p>
-        </article>
-        <article class="dish">
-          <span class="tag">Highlight</span>
-          <h3>Dönertasche mit Pommes</h3>
-          <p>Der Klassiker im Fladenbrot mit frischem Salat, Soße nach Wahl und knusprigen Pommes dazu.</p>
-        </article>
-        <article class="dish">
-          <span class="tag">Wahlweise</span>
-          <h3>Kalb oder Pute</h3>
-          <p>Bei allen Döner-Gerichten entscheiden Sie selbst: Kalbfleisch oder Putenfleisch.</p>
-        </article>
-      </div>
-      <div class="menu-note">
-        <span>Vollständige Speisekarte &amp; Preise im Laden oder telefonisch.</span>
-        <a href="tel:+49238173565" class="btn btn-ghost btn-sm"><svg><use href="#i-phone"/></svg>Anrufen</a>
+      <div class="favs" aria-label="Beliebte Gerichte">
+        <a href="#k-taschen" class="fav"><span><b>Dönertasche</b><small>Dönerfleisch, Salat, Soße</small></span><span class="price">4,00 €</span></a>
+        <a href="#k-teller" class="fav"><span><b>Döner Kebab Teller</b><small>mit Reis oder Pommes</small></span><span class="price">ab 5,00 €</span></a>
+        <a href="#k-pizza" class="fav"><span><b>Pizza</b><small>20 cm oder 28 cm</small></span><span class="price">ab 3,50 €</span></a>
       </div>
     </div>
   </section>
 
-  <section id="bewertungen" class="band">
+  <section id="speisekarte" aria-labelledby="menu-title">
     <div class="wrap">
       <div class="section-head">
-        <h2>Das sagen unsere Gäste</h2>
+        <h2 id="menu-title">Speisekarte</h2>
+        <p>Kategorie antippen, suchen oder nach vegetarischen Gerichten filtern. Bei allen Döner-Gerichten wahlweise Kalb oder Pute.</p>
+      </div>
+
+      <div class="menu-tools">
+        <label class="search">
+          <span class="sr-only">Gericht suchen</span>
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="q" type="search" placeholder="Gericht suchen, z. B. Sucuk" autocomplete="off">
+        </label>
+        <label class="toggle"><input id="veg" type="checkbox"> Nur vegetarisch</label>
+      </div>
+
+      <div class="chipbar">
+        <nav class="chips" aria-label="Kategorien der Speisekarte">
+<a href="#k-taschen" class="chip" data-target="k-taschen">Taschen &amp; Dürüm</a>
+<a href="#k-teller" class="chip" data-target="k-teller">Tellergerichte</a>
+<a href="#k-pide" class="chip" data-target="k-pide">Pide &amp; Lahmacun</a>
+<a href="#k-pizza" class="chip" data-target="k-pizza">Pizza</a>
+<a href="#k-salate" class="chip" data-target="k-salate">Salate</a>
+<a href="#k-pommes" class="chip" data-target="k-pommes">Pommes &amp; Extras</a>
+        </nav>
+      </div>
+
+      <div id="menu" aria-live="polite">
+<div class="cat" id="k-taschen"><div class="cat-head"><h3>Taschen &amp; Dürüm</h3><span class="count">10 Gerichte</span></div><p class="cat-sub">Frisch gefülltes Fladenbrot – der Klassiker für unterwegs.</p><ul class="items"><li class="item" data-veg="0" data-search="dönertasche fladenbrot mit dönerfleisch, salat und soße"><div class="item-main"><h4>Dönertasche<span class="badge b-pop">Beliebt</span></h4><p>Fladenbrot mit Dönerfleisch, Salat und Soße</p></div><div class="prices"><span class="price">4,00 €</span></div></li><li class="item" data-veg="0" data-search="pomm-döner fladenbrot mit dönerfleisch, pommes, salat und soße"><div class="item-main"><h4>Pomm-Döner</h4><p>Fladenbrot mit Dönerfleisch, Pommes, Salat und Soße</p></div><div class="prices"><span class="price">4,50 €</span></div></li><li class="item" data-veg="0" data-search="dürüm wrap gefüllt mit dönerfleisch, salat und soße"><div class="item-main"><h4>Dürüm</h4><p>Wrap gefüllt mit Dönerfleisch, Salat und Soße</p></div><div class="prices"><span class="price">4,50 €</span></div></li><li class="item" data-veg="0" data-search="dönerbox pommes, dönerfleisch und soße"><div class="item-main"><h4>Dönerbox<span class="badge b-pop">Beliebt</span></h4><p>Pommes, Dönerfleisch und Soße</p></div><div class="prices"><span class="price">3,50 €</span></div></li><li class="item" data-veg="0" data-search="köftetasche fladenbrot mit türkischen frikadellen und salat"><div class="item-main"><h4>Köftetasche</h4><p>Fladenbrot mit türkischen Frikadellen und Salat</p></div><div class="prices"><span class="price">4,00 €</span></div></li><li class="item" data-veg="0" data-search="sucuktasche fladenbrot mit türkischer knoblauchwurst und salat"><div class="item-main"><h4>Sucuktasche</h4><p>Fladenbrot mit türkischer Knoblauchwurst und Salat</p></div><div class="prices"><span class="price">4,00 €</span></div></li><li class="item" data-veg="0" data-search="thunfischtasche fladenbrot mit thunfisch und salat"><div class="item-main"><h4>Thunfischtasche</h4><p>Fladenbrot mit Thunfisch und Salat</p></div><div class="prices"><span class="price">4,00 €</span></div></li><li class="item" data-veg="1" data-search="käsetasche fladenbrot mit käse und salat"><div class="item-main"><h4>Käsetasche<span class="badge b-veg">Vegetarisch</span></h4><p>Fladenbrot mit Käse und Salat</p></div><div class="prices"><span class="price">3,50 €</span></div></li><li class="item" data-veg="1" data-search="salattasche fladenbrot mit salat und soße"><div class="item-main"><h4>Salattasche<span class="badge b-veg">Vegetarisch</span></h4><p>Fladenbrot mit Salat und Soße</p></div><div class="prices"><span class="price">3,00 €</span></div></li><li class="item" data-veg="1" data-search="pommestasche fladenbrot mit pommes, ketchup oder mayo"><div class="item-main"><h4>Pommestasche<span class="badge b-veg">Vegetarisch</span><span class="badge b-pop">Beliebt</span></h4><p>Fladenbrot mit Pommes, Ketchup oder Mayo</p></div><div class="prices"><span class="price">2,50 €</span></div></li></ul></div>
+<div class="cat" id="k-teller"><div class="cat-head"><h3>Tellergerichte</h3><span class="count">13 Gerichte</span></div><p class="cat-sub">Vom Grill, serviert mit Salat.</p><ul class="items"><li class="item" data-veg="0" data-search="döner kebab klein dönerfleisch, reis oder pommes und salat"><div class="item-main"><h4>Döner Kebab klein</h4><p>Dönerfleisch, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">5,00 €</span></div></li><li class="item" data-veg="0" data-search="döner kebab dönerfleisch, salat und soße"><div class="item-main"><h4>Döner Kebab</h4><p>Dönerfleisch, Salat und Soße</p></div><div class="prices"><span class="price">6,00 €</span></div></li><li class="item" data-veg="0" data-search="döner kebab mit reis dönerfleisch, reis, salat und soße"><div class="item-main"><h4>Döner Kebab mit Reis</h4><p>Dönerfleisch, Reis, Salat und Soße</p></div><div class="prices"><span class="price">7,00 €</span></div></li><li class="item" data-veg="0" data-search="döner kebab mit pommes dönerfleisch, pommes, salat und soße"><div class="item-main"><h4>Döner Kebab mit Pommes</h4><p>Dönerfleisch, Pommes, Salat und Soße</p></div><div class="prices"><span class="price">7,00 €</span></div></li><li class="item" data-veg="0" data-search="iskender kebab dönerfleisch mit tomatensoße und joghurt"><div class="item-main"><h4>Iskender Kebab</h4><p>Dönerfleisch mit Tomatensoße und Joghurt</p></div><div class="prices"><span class="price">7,00 €</span></div></li><li class="item" data-veg="0" data-search="antalya kebab dönerfleisch mit tomatensoße, mit käse überbacken, reis oder pommes und salat"><div class="item-main"><h4>Antalya Kebab</h4><p>Dönerfleisch mit Tomatensoße, mit Käse überbacken, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">9,00 €</span></div></li><li class="item" data-veg="0" data-search="hindi şiş kebab 2 putenspieße, reis oder pommes und salat"><div class="item-main"><h4>Hindi Şiş Kebab</h4><p>2 Putenspieße, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">8,00 €</span></div></li><li class="item" data-veg="0" data-search="kuzu şiş kebab 2 lammspieße, reis oder pommes und salat"><div class="item-main"><h4>Kuzu Şiş Kebab</h4><p>2 Lammspieße, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">9,00 €</span></div></li><li class="item" data-veg="0" data-search="köfte kebab türkische frikadellen, reis oder pommes und salat"><div class="item-main"><h4>Köfte Kebab</h4><p>Türkische Frikadellen, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">8,00 €</span></div></li><li class="item" data-veg="0" data-search="köfte saray türkische frikadellen in tomatensoße, mit käse überbacken, reis oder pommes und salat"><div class="item-main"><h4>Köfte Saray</h4><p>Türkische Frikadellen in Tomatensoße, mit Käse überbacken, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">9,00 €</span></div></li><li class="item" data-veg="0" data-search="pirzola gegrillte lammkoteletts, reis oder pommes und salat"><div class="item-main"><h4>Pirzola</h4><p>Gegrillte Lammkoteletts, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">9,50 €</span></div></li><li class="item" data-veg="0" data-search="karışık izgara grillteller: lammkotelett, putenspieß, köfte und dönerfleisch, reis oder pommes und salat"><div class="item-main"><h4>Karışık Izgara</h4><p>Grillteller: Lammkotelett, Putenspieß, Köfte und Dönerfleisch, Reis oder Pommes und Salat</p></div><div class="prices"><span class="price">10,00 €</span></div></li><li class="item" data-veg="0" data-search="sucukteller gegrillte sucuk, pommes, salat und fladenbrot"><div class="item-main"><h4>Sucukteller</h4><p>Gegrillte Sucuk, Pommes, Salat und Fladenbrot</p></div><div class="prices"><span class="price">6,50 €</span></div></li></ul></div>
+<div class="cat" id="k-pide"><div class="cat-head"><h3>Pide &amp; Lahmacun</h3><span class="count">8 Gerichte</span></div><p class="cat-sub">Frisch aus dem Ofen.</p><ul class="items"><li class="item" data-veg="0" data-search="lahmacun türkische pizza, pur"><div class="item-main"><h4>Lahmacun</h4><p>Türkische Pizza, pur</p></div><div class="prices"><span class="price">2,00 €</span></div></li><li class="item" data-veg="0" data-search="lahmacun mit salat mit salat und soße"><div class="item-main"><h4>Lahmacun mit Salat</h4><p>Mit Salat und Soße</p></div><div class="prices"><span class="price">3,00 €</span></div></li><li class="item" data-veg="0" data-search="lahmacun mit döner mit dönerfleisch, salat und soße"><div class="item-main"><h4>Lahmacun mit Döner</h4><p>Mit Dönerfleisch, Salat und Soße</p></div><div class="prices"><span class="price">4,50 €</span></div></li><li class="item" data-veg="1" data-search="pide käse mit käse"><div class="item-main"><h4>Pide Käse<span class="badge b-veg">Vegetarisch</span></h4><p>Mit Käse</p></div><div class="prices"><span class="price"><small></small> 3,50 €</span><span class="price"><small>gemischt</small> 4,00 €</span></div></li><li class="item" data-veg="0" data-search="pide hackfleisch mit hackfleisch"><div class="item-main"><h4>Pide Hackfleisch</h4><p>Mit Hackfleisch</p></div><div class="prices"><span class="price">3,50 €</span></div></li><li class="item" data-veg="0" data-search="pide hackfleisch &amp; käse mit hackfleisch und käse"><div class="item-main"><h4>Pide Hackfleisch &amp; Käse</h4><p>Mit Hackfleisch und Käse</p></div><div class="prices"><span class="price">4,00 €</span></div></li><li class="item" data-veg="0" data-search="pide sucuk mit türkischer knoblauchwurst und käse"><div class="item-main"><h4>Pide Sucuk</h4><p>Mit türkischer Knoblauchwurst und Käse</p></div><div class="prices"><span class="price">4,50 €</span></div></li><li class="item" data-veg="0" data-search="pide pastırma mit türkischem schinken und käse"><div class="item-main"><h4>Pide Pastırma</h4><p>Mit türkischem Schinken und Käse</p></div><div class="prices"><span class="price">5,00 €</span></div></li></ul></div>
+<div class="cat" id="k-pizza"><div class="cat-head"><h3>Pizza</h3><span class="count">16 Gerichte</span></div><p class="cat-sub">Jede Pizza in zwei Größen: 20 cm oder 28 cm.</p><ul class="items"><li class="item" data-veg="1" data-search="margherita tomaten, käse"><div class="item-main"><h4>Margherita<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse</p></div><div class="prices"><span class="price"><small>20 cm</small> 3,50 €</span><span class="price"><small>28 cm</small> 5,00 €</span></div></li><li class="item" data-veg="1" data-search="zwiebel tomaten, käse, zwiebeln"><div class="item-main"><h4>Zwiebel<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Zwiebeln</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="1" data-search="peperoni tomaten, käse, peperoni"><div class="item-main"><h4>Peperoni<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Peperoni</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="1" data-search="paprika tomaten, käse, paprika"><div class="item-main"><h4>Paprika<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Paprika</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="1" data-search="pilze tomaten, käse, pilze"><div class="item-main"><h4>Pilze<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Pilze</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="1" data-search="brokkoli tomaten, käse, brokkoli"><div class="item-main"><h4>Brokkoli<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Brokkoli</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="1" data-search="spinat tomaten, käse, spinat"><div class="item-main"><h4>Spinat<span class="badge b-veg">Vegetarisch</span></h4><p>Tomaten, Käse, Spinat</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="salami tomaten, käse, türkische salami"><div class="item-main"><h4>Salami</h4><p>Tomaten, Käse, türkische Salami</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="schinken tomaten, käse, putenschinken"><div class="item-main"><h4>Schinken</h4><p>Tomaten, Käse, Putenschinken</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="hawaii tomaten, käse, putenschinken, ananas"><div class="item-main"><h4>Hawaii</h4><p>Tomaten, Käse, Putenschinken, Ananas</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="antalya hackfleisch, käse"><div class="item-main"><h4>Antalya</h4><p>Hackfleisch, Käse</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,00 €</span><span class="price"><small>28 cm</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="thunfisch tomaten, käse, thunfisch"><div class="item-main"><h4>Thunfisch</h4><p>Tomaten, Käse, Thunfisch</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,50 €</span><span class="price"><small>28 cm</small> 6,50 €</span></div></li><li class="item" data-veg="0" data-search="döner tomaten, käse, dönerfleisch"><div class="item-main"><h4>Döner</h4><p>Tomaten, Käse, Dönerfleisch</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,50 €</span><span class="price"><small>28 cm</small> 6,50 €</span></div></li><li class="item" data-veg="0" data-search="sucuk tomaten, käse, sucuk"><div class="item-main"><h4>Sucuk</h4><p>Tomaten, Käse, Sucuk</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,50 €</span><span class="price"><small>28 cm</small> 6,50 €</span></div></li><li class="item" data-veg="0" data-search="pastırma tomaten, käse, türkischer schinken"><div class="item-main"><h4>Pastırma</h4><p>Tomaten, Käse, türkischer Schinken</p></div><div class="prices"><span class="price"><small>20 cm</small> 4,50 €</span><span class="price"><small>28 cm</small> 6,50 €</span></div></li><li class="item" data-veg="0" data-search="oliven tomaten, käse, thunfisch, zwiebeln, oliven"><div class="item-main"><h4>Oliven</h4><p>Tomaten, Käse, Thunfisch, Zwiebeln, Oliven</p></div><div class="prices"><span class="price"><small>20 cm</small> 5,00 €</span><span class="price"><small>28 cm</small> 7,00 €</span></div></li></ul><ul class="extras"><li><span><b>Jede weitere Zutat</b> – Zwiebeln, Paprika, Peperoni, Pilze, Brokkoli, Ananas, Spinat, Oliven, Schinken</span><span class="price">+0,50 €</span></li><li><span><b>Jede weitere Zutat</b> – Thunfisch, Pastırma, Sucuk, Dönerfleisch</span><span class="price">+1,00 €</span></li></ul></div>
+<div class="cat" id="k-salate"><div class="cat-head"><h3>Salate</h3><span class="count">4 Gerichte</span></div><p class="cat-sub">Frisch angerichtet, Salat nach Wahl.</p><ul class="items"><li class="item" data-veg="1" data-search="gemischter beilagensalat "><div class="item-main"><h4>Gemischter Beilagensalat<span class="badge b-vegan">Vegan</span></h4></div><div class="prices"><span class="price">2,00 €</span></div></li><li class="item" data-veg="1" data-search="salat mit fladenbrot salat nach wahl mit fladenbrot"><div class="item-main"><h4>Salat mit Fladenbrot<span class="badge b-vegan">Vegan</span></h4><p>Salat nach Wahl mit Fladenbrot</p></div><div class="prices"><span class="price"><small>klein</small> 3,50 €</span><span class="price"><small>groß</small> 5,50 €</span></div></li><li class="item" data-veg="0" data-search="salat mit dönerfleisch salat nach wahl mit dönerfleisch"><div class="item-main"><h4>Salat mit Dönerfleisch</h4><p>Salat nach Wahl mit Dönerfleisch</p></div><div class="prices"><span class="price"><small>klein</small> 4,00 €</span><span class="price"><small>groß</small> 6,00 €</span></div></li><li class="item" data-veg="0" data-search="salat mit thunfisch salat nach wahl mit thunfisch und fladenbrot"><div class="item-main"><h4>Salat mit Thunfisch</h4><p>Salat nach Wahl mit Thunfisch und Fladenbrot</p></div><div class="prices"><span class="price"><small>klein</small> 4,00 €</span><span class="price"><small>groß</small> 6,00 €</span></div></li></ul></div>
+<div class="cat" id="k-pommes"><div class="cat-head"><h3>Pommes &amp; Extras</h3><span class="count">2 Gerichte</span></div><ul class="items"><li class="item" data-veg="1" data-search="pommes frites "><div class="item-main"><h4>Pommes frites<span class="badge b-vegan">Vegan</span><span class="badge b-pop">Beliebt</span></h4></div><div class="prices"><span class="price"><small>klein</small> 1,20 €</span><span class="price"><small>groß</small> 2,20 €</span></div></li><li class="item" data-veg="1" data-search="mayonnaise oder ketchup "><div class="item-main"><h4>Mayonnaise oder Ketchup<span class="badge b-veg">Vegetarisch</span></h4></div><div class="prices"><span class="price">0,30 €</span></div></li></ul></div>
+      </div>
+      <p class="empty" id="empty">Kein Gericht gefunden. Versuchen Sie einen anderen Suchbegriff.</p>
+
+      <div class="menu-foot">
+        <div>
+          <b>Hunger? Einfach anrufen und bestellen.</b>
+          <p>Alle Preise in Euro inkl. MwSt. Angaben ohne Gewähr, Änderungen vorbehalten.</p>
+        </div>
+        <a href="tel:+49238173565" class="btn btn-primary"><svg aria-hidden="true"><use href="#i-phone"/></svg>02381 73565</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="bewertungen" class="band" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="rev-title">Das sagen unsere Gäste</h2>
         <p>Auszüge aus Google-Rezensionen.</p>
       </div>
-      <div class="big-score"><b>4,4</b><span>von 5 · 443 Bewertungen</span></div>
+      <div class="big-score"><b>4,4</b><span>von 5 Sternen · 443 Bewertungen</span></div>
       <div class="reviews">
-        <blockquote>
-          „Echt lecker der Döner – Kalb oder Pute, Soße passt. Netter Döner-Mann.“
-          <cite>Google-Rezension</cite>
-        </blockquote>
-        <blockquote>
-          „Die Portion war kaum zu schaffen, super lecker und preislich voll im Rahmen.“
-          <cite>Google-Rezension</cite>
-        </blockquote>
+        <blockquote>„Echt lecker der Döner – Kalb oder Pute, Soße passt. Netter Döner-Mann.“<cite>Google-Rezension</cite></blockquote>
+        <blockquote>„Die Portion war kaum zu schaffen, super lecker und preislich voll im Rahmen.“<cite>Google-Rezension</cite></blockquote>
       </div>
     </div>
   </section>
 
-  <section id="besuch">
+  <section id="besuch" aria-labelledby="visit-title">
     <div class="wrap">
       <div class="section-head">
-        <h2>Besuchen Sie uns</h2>
+        <h2 id="visit-title">Besuchen Sie uns</h2>
         <p>Zum Mitnehmen oder vor Ort – bei gutem Wetter auch draußen.</p>
       </div>
       <div class="visit-grid">
@@ -248,13 +341,13 @@
           <h3>Adresse</h3>
           <p>Rautenstrauchstraße 55<br>59075 Hamm</p>
           <h3>Öffnungszeiten</h3>
-          <p>Ab 11:00 Uhr geöffnet.<!-- TODO: vollständige Öffnungszeiten eintragen --></p>
+          <p>Ab 11:00 Uhr geöffnet.<!-- TODO: vollständige Öffnungszeiten je Wochentag eintragen --></p>
           <h3>Telefon</h3>
           <p><a href="tel:+49238173565">02381 73565</a></p>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Rautenstrauchstra%C3%9Fe+55,+59075+Hamm" class="btn btn-primary" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Route planen</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rautenstrauchstra%C3%9Fe+55%2C+59075+Hamm" class="btn btn-primary" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-route"/></svg>Route planen</a>
         </div>
-        <iframe class="map" title="Karte: Antalya-Grill, Rautenstrauchstraße 55, Hamm" loading="lazy"
-          src="https://www.google.com/maps?q=Rautenstrauchstra%C3%9Fe+55,+59075+Hamm&output=embed"></iframe>
+        <iframe class="map" title="Karte: Antalya-Grill, Rautenstrauchstraße 55, 59075 Hamm" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rautenstrauchstra%C3%9Fe+55%2C+59075+Hamm&amp;output=embed"></iframe>
       </div>
     </div>
   </section>
@@ -262,15 +355,70 @@
 
 <footer>
   <div class="wrap">
-    <span>© Antalya-Grill · Rautenstrauchstraße 55, 59075 Hamm</span>
+    <span>© Antalya-Grill · Rautenstrauchstraße 55, 59075 Hamm · 02381 73565</span>
     <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
   </div>
 </footer>
 
-<div class="callbar">
-  <a href="tel:+49238173565" class="btn btn-primary"><svg><use href="#i-phone"/></svg>Anrufen</a>
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Rautenstrauchstra%C3%9Fe+55,+59075+Hamm" class="btn btn-ghost" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Route</a>
-</div>
+<nav class="callbar" aria-label="Schnellzugriff">
+  <a href="tel:+49238173565" class="btn btn-primary"><svg aria-hidden="true"><use href="#i-phone"/></svg>Anrufen</a>
+  <a href="#speisekarte" class="btn btn-ghost"><svg aria-hidden="true"><use href="#i-menu"/></svg>Karte</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rautenstrauchstra%C3%9Fe+55%2C+59075+Hamm" class="btn btn-ghost" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-route"/></svg>Route</a>
+</nav>
 
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var veg = document.getElementById('veg');
+  var cats = [].slice.call(document.querySelectorAll('.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.chip'));
+  var empty = document.getElementById('empty');
+
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i'); }
+  cats.forEach(function (c) {
+    c.querySelectorAll('.item').forEach(function (it) { it._s = norm(it.dataset.search); });
+  });
+
+  function filter() {
+    var term = norm(q.value.trim());
+    var onlyVeg = veg.checked;
+    var any = false;
+    cats.forEach(function (c) {
+      var shown = 0;
+      c.querySelectorAll('.item').forEach(function (it) {
+        var ok = (!term || it._s.indexOf(term) !== -1) && (!onlyVeg || it.dataset.veg === '1');
+        it.hidden = !ok;
+        if (ok) shown++;
+      });
+      c.hidden = shown === 0;
+      var chip = document.querySelector('.chip[data-target="' + c.id + '"]');
+      if (chip) chip.hidden = shown === 0;
+      if (shown) any = true;
+    });
+    empty.classList.toggle('show', !any);
+  }
+  q.addEventListener('input', filter);
+  veg.addEventListener('change', filter);
+
+  // Highlight the category currently in view
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        chips.forEach(function (ch) {
+          var on = ch.dataset.target === en.target.id;
+          ch.classList.toggle('active', on);
+          if (on) {
+            ch.setAttribute('aria-current', 'true');
+            var bar = ch.parentNode;
+            if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: ch.offsetLeft - 16, behavior: 'smooth' });
+          } else ch.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    cats.forEach(function (c) { io.observe(c); });
+  }
+})();
+</script>
 </body>
 </html>
