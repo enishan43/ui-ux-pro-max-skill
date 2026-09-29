@@ -14,6 +14,10 @@ Ohne den Elektriker fehlt der Grundstein unseres Alltags.
 
 `index.html` im Browser öffnen, oder den ganzen Ordner auf einen Webspace hochladen.
 
+Zum schnellen Ansehen gibt es außerdem **`elektro-hasani-komplett.html`**: eine einzige
+Datei mit allem drin (CSS, JavaScript, Impressum, Datenschutz). Per Doppelklick öffnen,
+keine weiteren Dateien nötig. Neu erzeugen mit `python3 src/build_preview.py`.
+
 ## Aufbau (orientiert an erfolgreichen Elektriker-Websites)
 
 1. Topbar mit Öffnungszeiten, Adresse und Notfallnummer
@@ -74,7 +78,8 @@ Den Inhalt nicht direkt in `index.html` bearbeiten, sondern in `src/index.templa
 Danach:
 
 ```bash
-python3 src/build.py   # erzeugt Hero-Grafik + index.html
+python3 src/build.py           # erzeugt Hero-Grafik + index.html
+python3 src/build_preview.py   # erzeugt die Einzeldatei elektro-hasani-komplett.html
 ```
 
 Hintergrund-Recherche: [`docs/recherche.md`](docs/recherche.md)
