@@ -548,7 +548,32 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .logo__text small { display: none; }
 }
 
-.legal-inline { background: var(--bg-alt); border-top: 1px solid var(--border); }
+/* ---------- Impressum / Datenschutz als Pop-up (nur Einzeldatei) ---------- */
+html:has(dialog.legal-modal[open]) { overflow: hidden; }
+.legal-modal {
+  width: min(760px, calc(100% - 32px)); max-width: none; max-height: calc(100% - 48px);
+  padding: 0; border: 0; border-radius: 18px; overflow: hidden;
+  background: var(--bg-alt); color: var(--text); box-shadow: 0 24px 60px rgb(6 20 41 / 35%);
+}
+.legal-modal[open] { display: flex; flex-direction: column; }
+.legal-modal::backdrop { background: rgb(6 20 41 / 68%); }
+.legal-modal__bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 10px 10px 22px; background: var(--navy-900); color: #fff; flex: none;
+}
+.legal-modal__title { font-size: 1.15rem; font-weight: 800; color: #fff; margin: 0; }
+.legal-modal__close {
+  display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 10px;
+  background: rgb(255 255 255 / 10%); color: #fff; cursor: pointer; font: inherit; font-size: 1.7rem; line-height: 1;
+}
+.legal-modal__close:hover { background: rgb(255 255 255 / 20%); }
+.legal-modal__body { overflow-y: auto; overscroll-behavior: contain; padding: 8px 24px 28px; max-width: none; }
+.legal-modal__body .legal__lead { margin-top: 12px; }
+@media (max-width: 640px) {
+  .legal-modal { width: 100%; height: 100%; max-height: 100%; margin: 0; border-radius: 0; }
+  .legal-modal__bar { padding-top: calc(10px + env(safe-area-inset-top, 0px)); }
+  .legal-modal__body { padding: 4px 16px calc(28px + env(safe-area-inset-bottom, 0px)); }
+}
 </style>
   <script type="application/ld+json">
   {
@@ -995,9 +1020,36 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     </div>
   </section>
 
-<section class="legal-inline" id="impressum"><div class="container legal">
-    
-    <h2 class="section__title">Impressum</h2>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="logo logo--light" href="#top">
+        <span class="logo__mark" aria-hidden="true"><svg><use href="#i-zap"/></svg></span>
+        <span class="logo__text"><strong>Elektro Hasani</strong><small>Elektrotechnik · Hamm</small></span>
+      </a>
+      <p class="footer__claim">Leben braucht Leitung.</p>
+    </div>
+    <div>
+      <h2 class="footer__h">Kontakt</h2>
+      <p>Münsterstraße 41<br>59065 Hamm-Heessen</p>
+      <p><a href="tel:+4923814362971">02381 4362971</a><br><a href="tel:+491725432820">0172 5432820</a><br><a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></p>
+    </div>
+    <div>
+      <h2 class="footer__h">Öffnungszeiten</h2>
+      <p>Mo–Do 08:00–17:00 Uhr<br>Fr 08:00–13:00 Uhr</p>
+      <p><a href="https://www.instagram.com/elektrohasani/" target="_blank" rel="noopener">Instagram @elektrohasani</a></p>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <span>© <span id="year">2026</span> Elektro Hasani</span>
+    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
+  </div>
+</footer>
+
+<!-- Impressum & Datenschutz: erst per Link sichtbar -->
+<dialog class="legal-modal" id="impressum" aria-labelledby="impressum-title"><div class="legal-modal__bar"><h2 class="legal-modal__title" id="impressum-title">Impressum</h2><button type="button" class="legal-modal__close" aria-label="Impressum schließen">×</button></div><div class="legal legal-modal__body">
     <p class="legal__lead">Angaben gemäß § 5 DDG</p>
 
     <section class="card" aria-labelledby="imp-anbieter">
@@ -1039,9 +1091,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     </section>
 
     <p class="legal__foot"><a href="#datenschutz">Datenschutzerklärung</a> · <a href="#top">Startseite</a></p>
-  </div></section><section class="legal-inline" id="datenschutz"><div class="container legal">
-    
-    <h2 class="section__title">Datenschutz</h2>
+  </div></dialog>
+<dialog class="legal-modal" id="datenschutz" aria-labelledby="datenschutz-title"><div class="legal-modal__bar"><h2 class="legal-modal__title" id="datenschutz-title">Datenschutz</h2><button type="button" class="legal-modal__close" aria-label="Datenschutz schließen">×</button></div><div class="legal legal-modal__body">
     <p class="legal__lead">So gehen wir mit Ihren Daten um. Kurz und verständlich.</p>
 
     <section class="summary" aria-labelledby="ds-kurz">
@@ -1087,44 +1138,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     <p class="legal__meta">Stand: <mark class="todo">Datum</mark></p>
     <p class="legal__foot"><a href="#impressum">Impressum</a> · <a href="#top">Startseite</a></p>
 
-    <script>
-      (function () {
-        function openFromHash() {
-          var el = location.hash && document.getElementById(location.hash.slice(1));
-          if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView(); }
-        }
-        openFromHash();
-        window.addEventListener("hashchange", openFromHash);
-      })();
-    </script>
-  </div></section>
-</main>
+    
+  </div></dialog>
 
-<footer class="footer">
-  <div class="container footer__grid">
-    <div>
-      <a class="logo logo--light" href="#top">
-        <span class="logo__mark" aria-hidden="true"><svg><use href="#i-zap"/></svg></span>
-        <span class="logo__text"><strong>Elektro Hasani</strong><small>Elektrotechnik · Hamm</small></span>
-      </a>
-      <p class="footer__claim">Leben braucht Leitung.</p>
-    </div>
-    <div>
-      <h2 class="footer__h">Kontakt</h2>
-      <p>Münsterstraße 41<br>59065 Hamm-Heessen</p>
-      <p><a href="tel:+4923814362971">02381 4362971</a><br><a href="tel:+491725432820">0172 5432820</a><br><a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></p>
-    </div>
-    <div>
-      <h2 class="footer__h">Öffnungszeiten</h2>
-      <p>Mo–Do 08:00–17:00 Uhr<br>Fr 08:00–13:00 Uhr</p>
-      <p><a href="https://www.instagram.com/elektrohasani/" target="_blank" rel="noopener">Instagram @elektrohasani</a></p>
-    </div>
-  </div>
-  <div class="container footer__legal">
-    <span>© <span id="year">2026</span> Elektro Hasani</span>
-    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
-  </div>
-</footer>
 
 <!-- Mobile Schnellzugriff -->
 <nav class="quickbar" aria-label="Schnellkontakt">
@@ -1444,6 +1460,49 @@ window.HASANI_VIDEOS = [
   if (year) year.textContent = String(new Date().getFullYear());
 })();
 
+</script>
+<script>
+(function () {
+  "use strict";
+  function legalFor(id) {
+    var el = id && document.getElementById(id);
+    if (!el) return null;
+    var dlg = el.tagName === "DIALOG" ? el : el.closest("dialog.legal-modal");
+    return dlg ? { dialog: dlg, target: el === dlg ? null : el } : null;
+  }
+  function openLegal(hit) {
+    document.querySelectorAll("dialog.legal-modal[open]").forEach(function (d) {
+      if (d !== hit.dialog) d.close();
+    });
+    if (!hit.dialog.open) hit.dialog.showModal();
+    var body = hit.dialog.querySelector(".legal-modal__body");
+    if (hit.target) {
+      if (hit.target.tagName === "DETAILS") hit.target.open = true;
+      hit.target.scrollIntoView({ block: "start" });
+    } else if (body) {
+      body.scrollTop = 0;
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute("href").slice(1);
+    var hit = legalFor(id);
+    if (hit) { e.preventDefault(); openLegal(hit); return; }
+    var inside = a.closest("dialog.legal-modal");
+    if (inside) inside.close();
+  });
+  document.querySelectorAll("dialog.legal-modal").forEach(function (d) {
+    d.querySelector(".legal-modal__close").addEventListener("click", function () { d.close(); });
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  });
+  function fromHash() {
+    var hit = legalFor(location.hash.slice(1));
+    if (hit) openLegal(hit);
+  }
+  fromHash();
+  window.addEventListener("hashchange", fromHash);
+})();
 </script>
 </body>
 </html>

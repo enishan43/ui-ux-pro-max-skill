@@ -15,7 +15,8 @@ Ohne den Elektriker fehlt der Grundstein unseres Alltags.
 `index.html` im Browser öffnen, oder den ganzen Ordner auf einen Webspace hochladen.
 
 Zum schnellen Ansehen gibt es außerdem **`elektro-hasani-komplett.html`**: eine einzige
-Datei mit allem drin (CSS, JavaScript, Impressum, Datenschutz). Per Doppelklick öffnen,
+Datei mit allem drin (CSS, JavaScript; Impressum und Datenschutz öffnen sich als Pop-up
+über die Links im Footer). Per Doppelklick öffnen,
 keine weiteren Dateien nötig. Neu erzeugen mit `python3 src/build_preview.py`.
 
 ## Aufbau (orientiert an erfolgreichen Elektriker-Websites)
