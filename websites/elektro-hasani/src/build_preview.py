@@ -24,8 +24,12 @@ def legal_section(filename, section_id):
     body = re.search(r'<main class="container legal">(.*?)</main>', page, re.S).group(1)
     body = re.sub(r"<!--.*?-->", "", body, flags=re.S)
     body = body.replace("<h1>", '<h2 class="section__title">').replace("</h1>", "</h2>")
+    # Querverweise innerhalb der Einzeldatei
+    body = body.replace('href="index.html"', 'href="#top"')
+    body = body.replace('href="impressum.html"', 'href="#impressum"')
+    body = body.replace('href="datenschutz.html"', 'href="#datenschutz"')
     return (f'<section class="legal-inline" id="{section_id}"><div class="container legal">'
-            f'{body}<p><a class="link-arrow" href="#top">Nach oben</a></p></div></section>')
+            f'{body}</div></section>')
 
 
 html = read("index.html")
@@ -34,7 +38,7 @@ js = read("assets", "main.js").replace('"datenschutz.html#youtube"', '"#youtube"
 videos = read("videos.js")
 
 html = html.replace('<link rel="stylesheet" href="assets/style.css">',
-                    "<style>\n" + css + "\n.legal-inline { border-top: 1px solid var(--border); }\n</style>")
+                    "<style>\n" + css + "\n.legal-inline { background: var(--bg-alt); border-top: 1px solid var(--border); }\n</style>")
 html = html.replace('<script src="videos.js"></script>', "<script>\n" + videos + "\n</script>")
 html = html.replace('<script src="assets/main.js"></script>', "<script>\n" + js + "\n</script>")
 html = html.replace('href="impressum.html"', 'href="#impressum"')

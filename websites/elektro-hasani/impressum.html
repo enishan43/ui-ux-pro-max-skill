@@ -9,46 +9,64 @@
 </head>
 <body class="legal-page">
   <header class="legal-header">
-    <div class="container"><a href="index.html" class="legal-back">← Zurück zur Startseite</a></div>
+    <div class="container legal-header__inner">
+      <a class="logo logo--light" href="index.html" aria-label="Elektro Hasani – zur Startseite">
+        <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 1.5 3.8 13.6c-.4.5 0 1.2.6 1.2H11l-1.4 7.4c-.1.6.6.9 1 .4l9.6-12.1c.4-.5 0-1.2-.6-1.2H13l1.5-7.3c.1-.6-.6-.9-1-.5z"/></svg></span>
+        <span class="logo__text"><strong>Elektro Hasani</strong><small>Elektrotechnik · Hamm</small></span>
+      </a>
+      <a class="legal-back" href="index.html">← Zur Startseite</a>
+    </div>
   </header>
+
   <main class="container legal">
-    <h1>Impressum</h1>
-
     <!--
-      HINWEIS FÜR DEN BETRIEB: Alle Stellen mit [ … ] vor der Veröffentlichung
-      prüfen und ergänzen. Die Angaben stammen aus öffentlichen Verzeichnissen
-      und sind nicht vom Betrieb bestätigt.
+      HINWEIS FÜR DEN BETRIEB: Alle gelb markierten Stellen (class="todo") vor der
+      Veröffentlichung ergänzen oder den ganzen Eintrag löschen, falls er nicht zutrifft.
+      Die übrigen Angaben stammen aus öffentlichen Verzeichnissen und sind vom Betrieb
+      noch nicht bestätigt.
     -->
+    <h1>Impressum</h1>
+    <p class="legal__lead">Angaben gemäß § 5 DDG</p>
 
-    <h2>Angaben gemäß § 5 DDG</h2>
-    <p>Elektro Hasani GbR<br>Münsterstraße 41<br>59065 Hamm</p>
+    <section class="card" aria-labelledby="imp-anbieter">
+      <h2 id="imp-anbieter">Anbieter</h2>
+      <dl class="facts">
+        <div><dt>Firma</dt><dd>Elektro Hasani GbR</dd></div>
+        <div><dt>Anschrift</dt><dd>Münsterstraße 41<br>59065 Hamm</dd></div>
+        <div><dt>Vertreten durch</dt><dd><mark class="todo">Namen der Gesellschafter</mark></dd></div>
+      </dl>
+    </section>
 
-    <h2>Vertreten durch</h2>
-    <p>[Namen aller vertretungsberechtigten Gesellschafter bitte ergänzen]</p>
+    <section class="card" aria-labelledby="imp-kontakt">
+      <h2 id="imp-kontakt">Kontakt</h2>
+      <dl class="facts">
+        <div><dt>Telefon</dt><dd><a href="tel:+4923814362971">02381 4362971</a></dd></div>
+        <div><dt>Mobil</dt><dd><a href="tel:+491725432820">0172 5432820</a></dd></div>
+        <div><dt>E-Mail</dt><dd><a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></dd></div>
+      </dl>
+    </section>
 
-    <h2>Kontakt</h2>
-    <p>Telefon: <a href="tel:+4923814362971">02381 4362971</a><br>
-      Mobil: <a href="tel:+491725432820">0172 5432820</a><br>
-      E-Mail: <a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></p>
+    <section class="card" aria-labelledby="imp-beruf">
+      <h2 id="imp-beruf">Berufsrechtliche Angaben</h2>
+      <dl class="facts">
+        <div><dt>Berufsbezeichnung</dt><dd><mark class="todo">z. B. Elektrotechnikermeister</mark>, verliehen in Deutschland</dd></div>
+        <div><dt>Zuständige Kammer</dt><dd><mark class="todo">z. B. Handwerkskammer Dortmund</mark></dd></div>
+        <div><dt>Handwerksrolle</dt><dd>Eingetragen unter Nr. <mark class="todo">Nummer</mark></dd></div>
+        <div><dt>Regelungen</dt><dd><a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">Handwerksordnung (HwO)</a></dd></div>
+        <div><dt>Haftpflicht</dt><dd><mark class="todo">Versicherer und Geltungsbereich</mark></dd></div>
+        <div><dt>USt-ID</dt><dd><mark class="todo">DE… gemäß § 27a UStG</mark></dd></div>
+      </dl>
+    </section>
 
-    <h2>Umsatzsteuer-ID</h2>
-    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [bitte ergänzen oder Abschnitt entfernen]</p>
+    <section class="card" aria-labelledby="imp-hinweise">
+      <h2 id="imp-hinweise">Hinweise</h2>
+      <dl class="facts">
+        <div><dt>Streitbeilegung</dt><dd>Wir nehmen an Verfahren vor einer Verbraucherschlichtungsstelle nicht teil.</dd></div>
+        <div><dt>Externe Links</dt><dd>Für Inhalte verlinkter Seiten ist allein deren Anbieter verantwortlich.</dd></div>
+      </dl>
+    </section>
 
-    <h2>Berufsrechtliche Angaben</h2>
-    <p>Gesetzliche Berufsbezeichnung: [z. B. Elektrotechnikermeister], verliehen in der Bundesrepublik Deutschland<br>
-      Zuständige Kammer: [z. B. Handwerkskammer Dortmund, Reinoldistraße 7–9, 44135 Dortmund]<br>
-      Eintragung in die Handwerksrolle: [Nummer bitte ergänzen]<br>
-      Berufsrechtliche Regelungen: Gesetz zur Ordnung des Handwerks (Handwerksordnung), einsehbar unter
-      <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">gesetze-im-internet.de/hwo</a></p>
-
-    <h2>Berufshaftpflichtversicherung</h2>
-    <p>[Name und Anschrift des Versicherers sowie räumlicher Geltungsbereich – bitte ergänzen, falls vorhanden]</p>
-
-    <h2>Verbraucherstreitbeilegung</h2>
-    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-
-    <h2>Haftung für Links</h2>
-    <p>Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.</p>
+    <p class="legal__foot"><a href="datenschutz.html">Datenschutzerklärung</a> · <a href="index.html">Startseite</a></p>
   </main>
 </body>
 </html>

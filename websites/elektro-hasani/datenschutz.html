@@ -9,43 +9,79 @@
 </head>
 <body class="legal-page">
   <header class="legal-header">
-    <div class="container"><a href="index.html" class="legal-back">← Zurück zur Startseite</a></div>
+    <div class="container legal-header__inner">
+      <a class="logo logo--light" href="index.html" aria-label="Elektro Hasani – zur Startseite">
+        <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 1.5 3.8 13.6c-.4.5 0 1.2.6 1.2H11l-1.4 7.4c-.1.6.6.9 1 .4l9.6-12.1c.4-.5 0-1.2-.6-1.2H13l1.5-7.3c.1-.6-.6-.9-1-.5z"/></svg></span>
+        <span class="logo__text"><strong>Elektro Hasani</strong><small>Elektrotechnik · Hamm</small></span>
+      </a>
+      <a class="legal-back" href="index.html">← Zur Startseite</a>
+    </div>
   </header>
+
   <main class="container legal">
-    <h1>Datenschutzerklärung</h1>
-
     <!--
-      HINWEIS FÜR DEN BETRIEB: Diese Vorlage passt zum aktuellen Aufbau der Seite
-      (keine Cookies, keine Tracking-Tools, keine externen Schriften, keine
-      eingebettete Karte). Vor der Veröffentlichung den Hosting-Anbieter
-      eintragen und die Erklärung rechtlich prüfen lassen, z. B. mit einem
-      Generator (e-recht24, Datenschutz-Generator.de) oder durch einen Anwalt.
+      HINWEIS FÜR DEN BETRIEB: Diese Erklärung passt zum aktuellen Aufbau der Seite
+      (keine Cookies, kein Tracking, keine externen Schriften, keine eingebettete Karte).
+      Gelb markierte Stellen (class="todo") ergänzen. Ändert sich etwas an der Seite
+      (z. B. Analyse-Tool, Karte, YouTube), muss auch diese Erklärung angepasst werden.
+      Vor der Veröffentlichung rechtlich prüfen lassen.
     -->
+    <h1>Datenschutz</h1>
+    <p class="legal__lead">So gehen wir mit Ihren Daten um. Kurz und verständlich.</p>
 
-    <h2>1. Verantwortlicher</h2>
-    <p>Elektro Hasani GbR, Münsterstraße 41, 59065 Hamm<br>
-      Telefon: 02381 4362971 · E-Mail: <a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></p>
+    <section class="summary" aria-labelledby="ds-kurz">
+      <h2 id="ds-kurz">Auf einen Blick</h2>
+      <ul>
+        <li>Keine Cookies und kein Tracking auf dieser Website</li>
+        <li>Keine Schriften, Karten oder Videos von Fremdservern ohne Ihren Klick</li>
+        <li>Das Anfrageformular sendet nichts an uns: Sie schicken die E-Mail selbst ab</li>
+        <li>Ihre Daten nutzen wir nur, um Ihre Anfrage zu beantworten</li>
+      </ul>
+    </section>
 
-    <h2>2. Überblick</h2>
-    <p>Diese Website verwendet keine Cookies, keine Analyse- oder Tracking-Werkzeuge und lädt keine Schriften oder Karten von fremden Servern. Personenbezogene Daten verarbeiten wir nur, soweit dies für den Betrieb der Website und die Bearbeitung Ihrer Anfragen erforderlich ist.</p>
+    <div class="acc">
+      <details open>
+        <summary>Wer ist verantwortlich?</summary>
+        <p><strong>Elektro Hasani GbR</strong>, Münsterstraße 41, 59065 Hamm<br>
+          Telefon <a href="tel:+4923814362971">02381 4362971</a> · E-Mail <a href="mailto:elektro.hasani@googlemail.com">elektro.hasani@googlemail.com</a></p>
+      </details>
 
-    <h2>3. Hosting und Server-Logfiles</h2>
-    <p>Die Website wird bei [Name und Anschrift des Hosting-Anbieters] gehostet. Beim Aufruf werden technisch notwendige Daten (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Logfiles werden nach [Anzahl] Tagen gelöscht. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung.</p>
+      <details id="ds-hosting">
+        <summary>Was passiert beim Besuch der Website?</summary>
+        <p>Unser Hoster (<mark class="todo">Name und Anschrift</mark>) speichert technisch notwendige Daten in Server-Logfiles: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp. Das dient dem sicheren Betrieb der Seite (Art. 6 Abs. 1 lit. f DSGVO). Die Logfiles werden nach <mark class="todo">Anzahl</mark> Tagen gelöscht. Mit dem Hoster besteht ein Vertrag zur Auftragsverarbeitung.</p>
+      </details>
 
-    <h2>4. Kontaktaufnahme</h2>
-    <p>Wenn Sie uns per Telefon, E-Mail oder über das Anfrageformular kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Telefonnummer, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage. Das Formular übermittelt keine Daten an unseren Server: Es bereitet eine E-Mail in Ihrem eigenen E-Mail-Programm vor, die Sie selbst absenden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. lit. f DSGVO. Ihre Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten bestehen. Für den E-Mail-Empfang nutzen wir den Dienst Gmail der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+      <details id="ds-kontakt">
+        <summary>Was passiert, wenn ich Kontakt aufnehme?</summary>
+        <p>Bei Anruf, E-Mail oder Formular verarbeiten wir Ihre Angaben (Name, Telefonnummer, E-Mail, Nachricht), um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b und f DSGVO). Das Formular öffnet nur eine vorbereitete E-Mail in Ihrem eigenen Programm. Erst wenn Sie diese absenden, erreicht sie uns. Wir löschen Ihre Daten, sobald sie nicht mehr gebraucht werden und keine Aufbewahrungspflicht besteht. Unser E-Mail-Postfach läuft über Gmail (Google Ireland Limited, Dublin, Irland).</p>
+      </details>
 
-    <h2>5. Externe Links</h2>
-    <p>Links zu Google Maps, Google-Bewertungen und Instagram sind einfache Verweise. Erst wenn Sie einen Link anklicken, werden Daten an den jeweiligen Anbieter übertragen; es gilt dann dessen Datenschutzerklärung.</p>
+      <details id="youtube">
+        <summary>Was gilt für Videos und externe Links?</summary>
+        <p><strong>Eigene Videos</strong> laden direkt von unserem Server, dabei fließen keine Daten an Dritte.</p>
+        <p><strong>YouTube-Videos</strong> laden erst nach Ihrem Klick auf „Video abspielen“ (Zwei-Klick-Lösung, erweiterter Datenschutzmodus). Dann werden Daten wie Ihre IP-Adresse an Google übertragen, auch in die USA. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Mehr dazu: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+        <p><strong>Links</strong> zu Google Maps, Google-Bewertungen und Instagram sind einfache Verweise. Erst mit Ihrem Klick gelangen Daten zum jeweiligen Anbieter.</p>
+      </details>
 
-    <h2 id="youtube">6. Videos</h2>
-    <p>Selbst gehostete Videos werden direkt von unserem Server geladen; dabei werden keine Daten an Dritte übertragen.</p>
-    <p>Sofern wir YouTube-Videos einbinden, nutzen wir den erweiterten Datenschutzmodus (youtube-nocookie.com) und eine Zwei-Klick-Lösung: Eine Verbindung zu den Servern der Google Ireland Limited wird erst hergestellt, wenn Sie auf „Video abspielen“ klicken. Dabei können Daten wie Ihre IP-Adresse auch in die USA übertragen werden. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie durch den Klick erteilen. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+      <details id="ds-rechte">
+        <summary>Welche Rechte habe ich?</summary>
+        <p>Sie können jederzeit Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragung und Widerspruch verlangen (Art. 15–21 DSGVO) und eine Einwilligung widerrufen. Schreiben Sie uns dazu einfach an die E-Mail-Adresse oben. Beschweren können Sie sich bei der <a href="https://www.ldi.nrw.de/" target="_blank" rel="noopener">Landesbeauftragten für Datenschutz und Informationsfreiheit NRW</a>.</p>
+      </details>
+    </div>
 
-    <h2>7. Ihre Rechte</h2>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung (Art. 15–21 DSGVO) und können eine erteilte Einwilligung jederzeit widerrufen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen.</p>
+    <p class="legal__meta">Stand: <mark class="todo">Datum</mark></p>
+    <p class="legal__foot"><a href="impressum.html">Impressum</a> · <a href="index.html">Startseite</a></p>
 
-    <p class="legal-meta">Stand: [Datum eintragen]</p>
+    <script>
+      (function () {
+        function openFromHash() {
+          var el = location.hash && document.getElementById(location.hash.slice(1));
+          if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView(); }
+        }
+        openFromHash();
+        window.addEventListener("hashchange", openFromHash);
+      })();
+    </script>
   </main>
 </body>
 </html>
