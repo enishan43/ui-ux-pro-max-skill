@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>E.C Webdesigns – Logo-Varianten</title>
+<style>
+@font-face { font-family: "Archivo"; font-weight: 800; font-stretch: 62% 125%; src: url("../../fonts/archivo-800.woff2") format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 500; src: url("../../fonts/archivo-500.woff2") format("woff2"); }
+:root { --ink: #121417; --orange: #ff5b23; --paper: #f2f1ed; --grey: #8b8f94; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #555; font-family: "Archivo", Arial, sans-serif; font-weight: 500; }
+.logo { width: 1080px; height: 1080px; margin: 40px auto; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.ink { background: var(--ink); color: #fff; }
+.paper { background: var(--paper); color: var(--ink); }
+.orange { background: var(--orange); color: var(--ink); }
+
+.mono { font-weight: 800; font-stretch: 125%; letter-spacing: -.02em; line-height: .8; display: inline-flex; align-items: baseline; }
+.mono i { font-style: normal; display: inline-block; width: .2em; height: .2em; background: var(--orange); margin: 0 .07em 0 .06em; }
+.orange .mono i { background: var(--ink); }
+.word { font-weight: 800; font-stretch: 125%; text-transform: uppercase; letter-spacing: .34em; padding-left: .34em; }
+.tag { font-weight: 500; letter-spacing: .02em; }
+.ink .tag { color: #c7cacd; }
+.paper .tag { color: #4d5156; }
+
+/* 1 Monogramm mit Unterzeile */
+#l1 .mono { font-size: 330px; }
+#l1 .word { font-size: 40px; margin-top: 54px; }
+#l1 .rule { width: 120px; height: 6px; background: var(--orange); margin: 44px 0 40px; }
+#l1 .tag { font-size: 40px; }
+
+/* 2 Browserfenster */
+#l2 .win { width: 760px; border: 14px solid var(--ink); border-radius: 44px; overflow: hidden; background: #fff; }
+#l2 .chrome { height: 92px; background: var(--ink); display: flex; align-items: center; gap: 20px; padding-left: 36px; }
+#l2 .chrome span { width: 26px; height: 26px; border-radius: 50%; background: #3a3e44; }
+#l2 .chrome span:first-child { background: var(--orange); }
+#l2 .page { padding: 74px 0 64px; display: flex; flex-direction: column; align-items: center; }
+#l2 .mono { font-size: 230px; }
+#l2 .word { font-size: 32px; margin-top: 40px; }
+#l2 .tag { font-size: 40px; margin-top: 70px; }
+
+/* 3 Code-Klammern */
+#l3 .row { display: flex; align-items: center; gap: 18px; }
+#l3 .br { font-weight: 800; font-stretch: 62%; font-size: 250px; line-height: .8; color: var(--orange); transform: translateY(-14px); }
+#l3 .mono { font-size: 210px; }
+#l3 .word { font-size: 40px; margin-top: 64px; }
+#l3 .tag { font-size: 40px; margin-top: 24px; }
+
+/* 4 Liegend mit Trennstrich */
+#l4 { flex-direction: row; gap: 40px; }
+#l4 .mono { font-size: 170px; }
+#l4 .bar { width: 8px; height: 220px; background: var(--orange); }
+#l4 .txt { display: flex; flex-direction: column; gap: 26px; }
+#l4 .word { font-size: 38px; letter-spacing: .14em; padding-left: 0; }
+#l4 .tag { font-size: 34px; line-height: 1.3; }
+
+/* 5 Rundes Siegel (ideal fürs Profilbild) */
+#l5 svg { position: absolute; inset: 0; }
+#l5 .mono { font-size: 250px; position: relative; }
+
+/* 6 Text-Cursor */
+#l6 .row { display: flex; align-items: center; }
+#l6 .mono { font-size: 300px; }
+#l6 .cursor { width: 26px; height: 270px; background: var(--ink); margin-left: 36px; }
+#l6 .word { font-size: 40px; margin-top: 64px; }
+#l6 .tag { font-size: 44px; margin-top: 24px; font-weight: 800; font-stretch: 100%; letter-spacing: -.01em; }
+
+/* Übersicht */
+#sheet { width: 2280px; height: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; padding: 60px; background: #d9d8d3; margin: 40px auto; }
+#sheet img { width: 100%; display: block; }
+#sheet figure { display: flex; flex-direction: column; gap: 22px; font-size: 40px; font-weight: 800; font-stretch: 112%; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<section class="logo ink" id="l1">
+  <div class="mono">E<i></i>C</div>
+  <p class="word">Webdesigns</p>
+  <span class="rule"></span>
+  <p class="tag">Websites für dein Unternehmen</p>
+</section>
+
+<section class="logo paper" id="l2">
+  <div class="win">
+    <div class="chrome"><span></span><span></span><span></span></div>
+    <div class="page"><div class="mono">E<i></i>C</div><p class="word">Webdesigns</p></div>
+  </div>
+  <p class="tag">Websites für dein Unternehmen</p>
+</section>
+
+<section class="logo ink" id="l3">
+  <div class="row"><span class="br">&lt;</span><div class="mono">E<i></i>C</div><span class="br">/&gt;</span></div>
+  <p class="word">Webdesigns</p>
+  <p class="tag">Websites für dein Unternehmen</p>
+</section>
+
+<section class="logo paper" id="l4">
+  <div class="mono">E<i></i>C</div>
+  <span class="bar"></span>
+  <div class="txt"><p class="word">Webdesigns</p><p class="tag">Websites für<br>dein Unternehmen</p></div>
+</section>
+
+<section class="logo ink" id="l5">
+  <svg viewBox="0 0 1080 1080" aria-hidden="true">
+    <defs><path id="ring" d="M540,540 m-360,0 a360,360 0 1,1 720,0 a360,360 0 1,1 -720,0"/></defs>
+    <circle cx="540" cy="540" r="440" fill="none" stroke="#ff5b23" stroke-width="10"/>
+    <circle cx="540" cy="540" r="290" fill="none" stroke="#2b2f35" stroke-width="4"/>
+    <text font-family="Archivo" font-weight="800" font-stretch="125%" font-size="50" fill="#ffffff">
+      <textPath href="#ring" startOffset="0" textLength="2235" lengthAdjust="spacing">WEBSITES FÜR DEIN UNTERNEHMEN • E.C WEBDESIGNS •</textPath>
+    </text>
+  </svg>
+  <div class="mono">E<i></i>C</div>
+</section>
+
+<section class="logo orange" id="l6">
+  <div class="row"><div class="mono">E<i></i>C</div><span class="cursor"></span></div>
+  <p class="word">Webdesigns</p>
+  <p class="tag">Websites für dein Unternehmen</p>
+</section>
+
+<section id="sheet">
+  <figure><img src="../EC-Logo-1-Monogramm.png" alt=""><figcaption>1 · Monogramm</figcaption></figure>
+  <figure><img src="../EC-Logo-2-Browserfenster.png" alt=""><figcaption>2 · Browserfenster</figcaption></figure>
+  <figure><img src="../EC-Logo-3-Code.png" alt=""><figcaption>3 · Code-Klammern</figcaption></figure>
+  <figure><img src="../EC-Logo-4-Liegend.png" alt=""><figcaption>4 · Liegend</figcaption></figure>
+  <figure><img src="../EC-Logo-5-Siegel.png" alt=""><figcaption>5 · Siegel (rund)</figcaption></figure>
+  <figure><img src="../EC-Logo-6-Cursor.png" alt=""><figcaption>6 · Cursor</figcaption></figure>
+</section>
+
+</body>
+</html>
