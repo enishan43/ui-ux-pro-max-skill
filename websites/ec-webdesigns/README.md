@@ -8,7 +8,7 @@
   der einzelnen `<section>`-Elemente rendern (1080 px breit).
 
 ## Website-Vorlage (`vorlage/`)
-Allgemeine Vorlage für Handwerksbetriebe, Beispiel: Tischlerei Brandt (fiktiv).
+Allgemeine Vorlage für kleine Unternehmen (Handwerk, Praxis, Laden, Dienstleister), Beispiel: Tischlerei Brandt (fiktiv).
 - Farben: oben im `<style>` unter `:root` (`--accent`, `--warm` …)
 - Texte, Leistungen, Ablauf, Bewertungen, Kontaktdaten: im `CONFIG`-Block am Ende der Datei
 - Schriften liegen lokal in `fonts/` (keine Verbindung zu Google, DSGVO-freundlich)
