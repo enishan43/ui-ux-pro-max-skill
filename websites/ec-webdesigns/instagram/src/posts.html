@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>E.C Webdesigns – Instagram-Motive</title>
+<style>
+/* Markenfarben E.C Webdesigns: Tinte, Signalorange, Papier */
+@font-face { font-family: "Archivo"; font-weight: 800; font-stretch: 62% 125%; src: url("../../fonts/archivo-800.woff2") format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 500; src: url("../../fonts/archivo-500.woff2") format("woff2"); }
+:root { --ink: #121417; --orange: #ff5b23; --paper: #f2f1ed; --grey: #8b8f94; --line: rgb(255 255 255 / 14%); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #555; font-family: "Archivo", Arial, sans-serif; font-weight: 500; }
+.art { width: 1080px; height: 1350px; position: relative; overflow: hidden; margin: 40px auto; display: flex; flex-direction: column; padding: 84px 84px 72px; }
+.art--sq { height: 1080px; }
+.ink { background: var(--ink); color: #fff; }
+.paper { background: var(--paper); color: var(--ink); }
+.orange { background: var(--orange); color: var(--ink); }
+
+/* Logo */
+.mono { font-weight: 800; font-stretch: 125%; letter-spacing: -.02em; line-height: .8; display: inline-flex; align-items: baseline; }
+.mono i { font-style: normal; display: inline-block; width: .2em; height: .2em; background: var(--orange); margin: 0 .07em 0 .06em; }
+.orange .mono i { background: var(--ink); }
+.word { font-weight: 800; font-stretch: 125%; letter-spacing: .32em; text-transform: uppercase; }
+
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 26px; letter-spacing: .04em; }
+.foot .mono { font-size: 44px; }
+.ink .foot { color: var(--grey); }
+.paper .foot { color: #6c7075; }
+.orange .foot { color: rgb(18 20 23 / 70%); }
+
+.kicker { font-weight: 800; font-stretch: 125%; font-size: 26px; letter-spacing: .24em; text-transform: uppercase; }
+.ink .kicker { color: var(--orange); }
+.h { font-weight: 800; font-stretch: 112%; letter-spacing: -.035em; line-height: .95; margin-top: 28px; }
+.sub { font-size: 36px; line-height: 1.35; margin-top: 30px; max-width: 820px; }
+.ink .sub { color: #c7cacd; }
+
+/* 1 Intro */
+#p1 .big { font-size: 330px; margin-top: 120px; }
+#p1 .word { font-size: 46px; margin-top: 56px; }
+#p1 .h { font-size: 92px; margin-top: 110px; }
+#p1 .bar { position: absolute; right: 0; top: 0; width: 22px; height: 100%; background: var(--orange); }
+
+/* Laptop */
+.laptop { margin-top: auto; margin-bottom: 52px; align-self: center; width: 980px; }
+.laptop .scr { background: #0b0c0e; border-radius: 26px 26px 0 0; padding: 22px 22px 26px; }
+.laptop img { display: block; width: 100%; border-radius: 4px; }
+.laptop .base { height: 30px; background: linear-gradient(#cfd2d6, #9da1a6); border-radius: 0 0 26px 26px; margin: 0 -40px; position: relative; }
+.laptop .base::after { content: ""; position: absolute; left: 50%; top: 0; width: 170px; height: 12px; transform: translateX(-50%); background: #8c9095; border-radius: 0 0 12px 12px; }
+#p2 .h { font-size: 104px; }
+
+/* Handys */
+.phones { margin-top: auto; margin-bottom: 90px; display: flex; justify-content: center; gap: 44px; align-items: flex-end; }
+.phone { width: 330px; background: var(--ink); border-radius: 58px; padding: 16px; box-shadow: 0 30px 60px rgb(18 20 23 / 35%); }
+.phone img { display: block; width: 100%; border-radius: 44px; }
+.phone--lo { transform: translateY(40px); }
+#p3 .h { font-size: 100px; }
+
+/* Checkliste */
+#p4 .h { font-size: 104px; }
+.list { margin-top: 70px; display: grid; gap: 0; }
+.list li { list-style: none; display: grid; grid-template-columns: 76px 1fr; gap: 26px; align-items: center; padding: 30px 0; border-top: 2px solid var(--line); }
+.list li:last-child { border-bottom: 2px solid var(--line); }
+.list b { display: grid; place-items: center; width: 76px; height: 76px; background: var(--orange); color: var(--ink); font-weight: 800; font-size: 34px; }
+.list strong { display: block; font-weight: 800; font-stretch: 112%; font-size: 44px; letter-spacing: -.01em; }
+.list span { display: block; font-size: 29px; color: #a9adb2; margin-top: 4px; }
+
+/* Schritte + CTA */
+#p5 .h { font-size: 120px; }
+.steps { margin-top: 74px; display: grid; gap: 34px; }
+.steps div { display: grid; grid-template-columns: 150px 1fr; align-items: center; }
+.steps em { font-style: normal; font-weight: 800; font-stretch: 125%; font-size: 120px; line-height: .8; color: var(--orange); }
+.steps strong { font-weight: 800; font-stretch: 112%; font-size: 52px; letter-spacing: -.015em; }
+.steps span { display: block; font-size: 31px; color: #5d6166; margin-top: 8px; }
+.cta { margin-top: 74px; background: var(--ink); color: #fff; padding: 40px 44px; display: flex; justify-content: space-between; align-items: center; }
+.cta strong { font-weight: 800; font-stretch: 112%; font-size: 46px; }
+.cta span { font-size: 30px; color: #c7cacd; display: block; margin-top: 6px; }
+.cta i { font-style: normal; font-size: 80px; color: var(--orange); line-height: 1; }
+
+/* Profilbild */
+#avatar { padding: 0; align-items: center; justify-content: center; }
+#avatar .mono { font-size: 360px; }
+#avatar .word { font-size: 40px; margin-top: 48px; letter-spacing: .4em; padding-left: .4em; }
+#avatar .stack { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+
+<!-- 1: Vorstellung -->
+<section class="art ink" id="p1">
+  <span class="bar"></span>
+  <p class="kicker">Neu hier</p>
+  <div class="mono big">E<i></i>C</div>
+  <p class="word">Webdesigns</p>
+  <h1 class="h">Websites für Handwerks&shy;betriebe.</h1>
+  <p class="sub">Klar aufgebaut. Schnell geladen. Gemacht, damit das Telefon klingelt.</p>
+  <div class="foot"><span>Beispiele &amp; Tipps auf diesem Profil</span><span style="color:var(--orange);font-size:44px">→</span></div>
+</section>
+
+<!-- 2: Laptop -->
+<section class="art paper" id="p2">
+  <p class="kicker" style="color:var(--orange)">Beispielprojekt</p>
+  <h1 class="h">Der erste Eindruck zählt.</h1>
+  <p class="sub" style="color:#4a4e53">Ihre Website zeigt, wer Sie sind, was Sie können und wie man Sie erreicht – auf einen Blick.</p>
+  <div class="laptop"><div class="scr"><img src="shot-desktop.jpg" alt=""></div><div class="base"></div></div>
+  <div class="foot"><span class="mono">E<i></i>C</span><span>Vorlage: Tischlerei (fiktiv)</span></div>
+</section>
+
+<!-- 3: Handy -->
+<section class="art orange" id="p3">
+  <p class="kicker">Mobil zuerst</p>
+  <h1 class="h">Ihre Kunden suchen am Handy.</h1>
+  <div class="phones">
+    <div class="phone"><img src="shot-mobile-hero.jpg" alt=""></div>
+    <div class="phone phone--lo"><img src="shot-mobile-services.jpg" alt=""></div>
+  </div>
+  <div class="foot"><span class="mono">E<i></i>C</span><span>Anrufen mit einem Fingertipp</span></div>
+</section>
+
+<!-- 4: Was drinsteckt -->
+<section class="art ink" id="p4">
+  <p class="kicker">Inklusive</p>
+  <h1 class="h">Das steckt in jeder Website.</h1>
+  <ul class="list">
+    <li><b>01</b><div><strong>Integrierte Anfrage</strong><span>Kunden schicken ihr Anliegen direkt über die Seite</span></div></li>
+    <li><b>02</b><div><strong>Anruf-Button</strong><span>Immer sichtbar, auf dem Handy mit einem Tipp</span></div></li>
+    <li><b>03</b><div><strong>Ihre Bewertungen</strong><span>Gute Google-Bewertungen sichtbar machen</span></div></li>
+    <li><b>04</b><div><strong>Für jedes Gerät</strong><span>Handy, Tablet und PC</span></div></li>
+    <li><b>05</b><div><strong>Ohne Tracking</strong><span>Keine Cookies, datenschutzfreundlich gebaut</span></div></li>
+  </ul>
+  <div class="foot"><span class="mono">E<i></i>C</span><span>Webdesigns</span></div>
+</section>
+
+<!-- 5: Ablauf + Kontakt -->
+<section class="art paper" id="p5">
+  <p class="kicker" style="color:var(--orange)">So einfach geht's</p>
+  <h1 class="h">In 3 Schritten online.</h1>
+  <div class="steps">
+    <div><em>1</em><p><strong>Kurzes Gespräch</strong><span>Sie erzählen von Ihrem Betrieb.</span></p></div>
+    <div><em>2</em><p><strong>Entwurf ansehen</strong><span>Sie sehen Ihre Seite, bevor Sie sich entscheiden.</span></p></div>
+    <div><em>3</em><p><strong>Online gehen</strong><span>Wir kümmern uns um die Technik.</span></p></div>
+  </div>
+  <div class="cta"><div><strong>Interesse?</strong><span>Schreiben Sie uns eine Nachricht.</span></div><i>→</i></div>
+  <div class="foot"><span class="mono">E<i></i>C</span><span>Webdesigns</span></div>
+</section>
+
+<!-- Profilbild (rund zugeschnitten auf Instagram) -->
+<section class="art art--sq ink" id="avatar">
+  <div class="stack"><div class="mono">E<i></i>C</div><p class="word">Webdesigns</p></div>
+</section>
+
+</body>
+</html>
